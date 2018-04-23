@@ -42,4 +42,4 @@ RUN set -ex \
 	&& apk del .build-deps \
 	&& rm -rf /no-pic.patch $GOPATH /usr/local/go
 #run!
-ENTRYPOINT ["cloud-torrent"]
+ENTRYPOINT ["cloudtorrent"]

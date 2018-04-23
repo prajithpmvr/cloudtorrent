@@ -2,7 +2,7 @@ FROM alpine:edge
 LABEL maintainer="dev@jpillora.com"
 # prepare go env
 ENV GOPATH /go
-ENV NAME cloud-torrent
+ENV NAME cloudtorrent
 ENV PACKAGE github.com/prajithpmvr/$NAME
 ENV PACKAGE_DIR $GOPATH/src/$PACKAGE
 ENV GOLANG_VERSION 1.9.1

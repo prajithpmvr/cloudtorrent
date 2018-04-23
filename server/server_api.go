@@ -11,7 +11,7 @@ import (
 	"github.com/anacrolix/torrent"
 	"github.com/anacrolix/torrent/metainfo"
 
-	"github.com/prajithpmvr/cloud-torrent/engine"
+	"github.com/prajithpmvr/cloudtorrent/engine"
 )
 
 func (s *Server) api(r *http.Request) error {

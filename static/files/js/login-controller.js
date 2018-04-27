@@ -2,15 +2,18 @@
 
 app.controller('LoginController',function($scope){
     $scope.IsVisible = false
-
+    $scope.IsTrue = false;
+var us = "admin@cloudtorrent.ml";
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             $scope.IsVisible = $scope.IsVisible = true;
+            if(document.getElementById('username').value == us){
+                $scope.IsTrue = true;
+            }
         } else {
             document.getElementById("login").reset();
             $scope.IsVisible = $scope.IsVisible = false;        }
     });
-
 
     $scope.ShowHide = function(){
         var username = document.getElementById('username').value

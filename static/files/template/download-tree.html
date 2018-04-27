@@ -10,9 +10,6 @@
     <a ng-if="!isdownloading()" ng-href="download/{{ node.$path }}">{{ node.Name }}</a>
     <span ng-if="isfile() && isdownloading()">{{ node.Name }}</span>
     <span ng-if="!isdownloading()" class="controls">
-      <i ng-show="!confirm" ng-click="preremove()" class="red trash icon"></i>
-      <i ng-show="!deleting && confirm" ng-click="deleting = true; remove();" class="red check icon"></i>
-      <i ng-show="deleting" class="grey notched circle loading icon"></i>
       <i ng-show="imagePreview || videoPreview || audioPreview" ng-click="togglePreview()" class="green {{ showPreview ? 'circle outline' : 'video play outline' }} icon"></i>
     </span>
   </div>

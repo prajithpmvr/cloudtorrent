@@ -7,19 +7,23 @@ var us = "admin@cloudtorrent.ml";
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
             $scope.IsVisible = $scope.IsVisible = true;
-            if(document.getElementById('username').value == us){
+            NProgress.done();
+            if(user.email == us){
                 $scope.IsTrue = true;
             }
         } else {
-            document.getElementById("login").reset();
-            $scope.IsVisible = $scope.IsVisible = false;        }
+            }
     });
 
     $scope.ShowHide = function(){
+        NProgress.configure({ showSpinner: false });
+        NProgress.start();
         var username = document.getElementById('username').value
         var password = document.getElementById('password').value
         firebase.auth().signInWithEmailAndPassword(username, password).catch(function(error) {
-
+            NProgress.done();
+            document.getElementById("login").reset();
+            $scope.IsVisible = $scope.IsVisible = false;
         });
 
     }

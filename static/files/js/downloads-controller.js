@@ -72,7 +72,7 @@ app.controller("NodeController", function($scope, $rootScope, $http, $timeout) {
 
   //defaults
   $scope.closed = function() {
-    return n.$closed;
+    return !n.$closed;
   };
   $scope.toggle = function() {
     n.$closed = !n.$closed;
